@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+
+int main()
+
+{
+    int m,n;
+    cout << "enter rows num of matrix: ";
+    cin >> m;
+
+    cout << "enter column num of matrix: ";
+    cin >> n;
+
+    int mat[100][100];
+
+    cout <<"\nenter elem of matrix A:\n";
+    for(int r = 0; r < m; r++)
+    {
+        for (int c = 0; c < n; c++)
+        {
+            cout << "A[" << r << "]:";
+            cin >> mat[r][c];
+        }
+    }
+    for (int r = 0; r<m; r++)
+    {
+        for(int c = 0;c < n;c++)
+        {
+            if(r > c)
+                swap(mat[r][c],mat[c][r]);
+        }
+    }
+    cout <<"\ntrans matrix of A is B:\n";
+    for(int r = 0; r < m;r++)
+    {
+        cout << "\t";
+        for(int c = 0; c < n; c++)
+        {
+            cout << mat[r][c] << " ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
