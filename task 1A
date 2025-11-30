@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int m,n;
+    cout <<"enter rows number of matrix: ";
+    cin >> m;
+    cout <<"enter column number of matrix: ";
+    cin >> n;
+
+    int mat1 [100][100], mat2[100][100];
+
+    cout << "\nenter elements of matrix A:\n";
+    for(int r = 0; r<m;r++)
+    {
+        for(int c = 0; c < n; c++)
+        {
+            cout <<"A[" << r << "][" << c << "]: ";
+            cin >> mat1[r][c];
+
+        }
+
+    }
+    for (int r = 0; r < m; r++)
+        for(int c = 0; c < n; c++)
+        mat2[c][r] = mat1 [r][c];
+    cout << "\ntranspose matrix of A is B:\n";
+    for(int r = 0; r < n; r++)
+    {
+        for ( int c = 0; c < m; c++)
+        cout << mat2[r][c] << " ";
+    cout << endl;
+    }
+    return 0 ;
+
+}
