@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+int main ()
+{
+    int n, isSymmetric = 1;
+     cin >> n;
+      int mat[100][100];
+
+      cout <<"\nenter elements of matrix A:\n";
+      for (int r = 0; r < n; r++)
+      {
+          for(int c = 0; c < n;c++)
+          {
+              cout << "A["<< r << "][" << c << "]:";
+              cin >> mat[r][c];
+          }
+          cout << endl;
+      }
+      for ( int r = 0; r < n; r++)
+      {
+          for(int c = 0; c<n; c++)
+          {
+              if (r > c && mat[r][c] != mat[c][r])
+              {
+                  isSymmetric = 0;
+                  break;
+              }
+          }
+          if(!isSymmetric)break;
+      }
+      if(isSymmetric)
+        cout << "the matrix is symmetric";
+      else
+        cout << "the matrix is symmetric";
+      return 0;
+}
